@@ -5,12 +5,14 @@ const COLUMN_IDS = new Set(KANBAN_COLUMNS.map(({ id }) => id));
 export function splitTables(items = []) {
   const tables = new Map();
   for (const entry of items) {
-    const tableName = entry?.json?.tableName;
+    const payload = entry?.json ?? entry ?? {};
+    const tableName = payload?.tableName;
     if (!tableName) continue;
     if (!tables.has(tableName)) {
       tables.set(tableName, []);
     }
-    tables.get(tableName).push(entry.json.data);
+    const row = payload?.data ?? payload;
+    tables.get(tableName).push(row);
   }
   return tables;
 }
