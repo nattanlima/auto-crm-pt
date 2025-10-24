@@ -1,0 +1,24 @@
+﻿html, body { height: 100%; }
+body { overflow: hidden; }
+
+.kanban-scroll-x::-webkit-scrollbar { height: 10px; }
+.kanban-scroll-x::-webkit-scrollbar-track { background: #e5e5e5; border-radius: 9999px; }
+.kanban-scroll-x::-webkit-scrollbar-thumb { background: #b3b3b3; border-radius: 9999px; }
+.kanban-scroll-x::-webkit-scrollbar-thumb:hover { background: #999; }
+
+.kanban-scroll-y::-webkit-scrollbar { width: 6px; }
+.kanban-scroll-y::-webkit-scrollbar-track { background: transparent; }
+.kanban-scroll-y::-webkit-scrollbar-thumb { background: #c7c7c7; border-radius: 9999px; }
+.kanban-scroll-y::-webkit-scrollbar-thumb:hover { background: #b3b3b3; }
+
+.column-collapsed { width: 3.5rem !important; cursor: pointer; }
+.column-collapsed .column-header, .column-collapsed .cards { display: none; }
+.column-collapsed .column-header-collapsed { display: flex !important; }
+.column-header-collapsed { display: none; }
+
+.card-dragging { opacity: 0.5; transform: rotate(2deg); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+.drop-zone { background-color: #dcfce7; }
+
+.modal-mask { position: fixed; inset: 0; backdrop-filter: blur(2px); }
+
+.writing-mode-vertical { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; }

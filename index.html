@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban de Leads</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/base.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-['Inter']">
+    <main class="p-4 md:p-6 h-dvh flex flex-col gap-4">
+        <header>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Painel de Leads</h1>
+        </header>
+
+        <section id="filters" class="grid gap-3 md:grid-cols-[1fr_auto_auto]">
+            <!-- filtros renderizados via JS -->
+        </section>
+
+        <section id="kanban-root" class="flex-1 min-h-0">
+            <!-- kanban renderizado via JS -->
+        </section>
+    </main>
+
+    <div id="modal-root"><!-- modal dinamico --></div>
+
+    <template id="spinner-template">
+        <div class="flex items-center justify-center h-full">
+            <div class="inline-flex items-center gap-3 text-gray-500">
+                <svg class="animate-spin h-6 w-6 text-[#00ba70]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                </svg>
+                <span class="font-medium">Sincronizando dados...</span>
+            </div>
+        </div>
+    </template>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
